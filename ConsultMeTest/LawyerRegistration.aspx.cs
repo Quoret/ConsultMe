@@ -10,6 +10,8 @@ using System.Web.UI.WebControls;
 using System.Text.RegularExpressions;
 using System.Net.Mail;
 using System.Web.Configuration;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace ConsultMeTest
 {
@@ -34,8 +36,14 @@ namespace ConsultMeTest
                 {
                     if(IsthePasswordValid(L_conPassword.Text.Trim()))
                     {
-                        newLawyerSignUp();
-                        Response.Redirect("Lawyerlogin.aspx");
+                        
+                        
+                            newLawyerSignUp();
+                            Response.Redirect("Lawyerlogin.aspx");
+                      
+                     
+                        
+
                     }
                     else
                     {
@@ -65,15 +73,20 @@ namespace ConsultMeTest
                     con.Open();
                 }
 
+                string hashedPassword = HashPassword(L_conPassword.Text.Trim());
 
-                SqlCommand cmd = new SqlCommand("INSERT INTO Lawyer (LawyerFullname,LawyerEmail,LawyerUsername,LawyerPassword) values(@LawyerFullname,@LawyerEmail,@LawyerUsername,@LawyerPassword) ", con);
+                SqlCommand cmd = new SqlCommand("INSERT INTO Lawyer (LawyerFullname,LawyerEmail,LawyerLicenseNumber,LawyerUsername,LawyerPassword,LawyerStatus) values(@LawyerFullname,@LawyerEmail,@LawyerLicenseNumber,@LawyerUsername,@LawyerPassword,@LawyerStatus) ", con);
                 
-                cmd.Parameters.AddWithValue("@LawyerFullname", L_Fullname.Text.Trim());
+                    cmd.Parameters.AddWithValue("@LawyerFullname", L_Fullname.Text.Trim());
                     cmd.Parameters.AddWithValue("@LawyerEmail", L_Email.Text.Trim());
+                cmd.Parameters.AddWithValue("@LawyerLicenseNumber", LicenseNumber.Text.Trim());
                     cmd.Parameters.AddWithValue("@LawyerUsername", L_Username.Text.Trim());
-                    cmd.Parameters.AddWithValue("@LawyerPassword", L_conPassword.Text.Trim());
-                    cmd.ExecuteNonQuery();
-                con.Close();
+                    cmd.Parameters.AddWithValue("@LawyerPassword", hashedPassword);
+                cmd.Parameters.AddWithValue("@LawyerStatus", "Pending");
+
+
+                cmd.ExecuteNonQuery();
+                    con.Close();
                     Response.Write("<script>alert('Sign up successful. Login now !!');</script>");
                 
                
@@ -148,7 +161,6 @@ namespace ConsultMeTest
                 return false;
             }
         }
-
         bool IsValidDomain(string domain)
         {
             try
@@ -161,5 +173,14 @@ namespace ConsultMeTest
                 return false;
             }
         }
+        string HashPassword(string password)
+        {
+            using (var sha256 = SHA256.Create())
+            {
+                var hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
+            }
+        }
+
     }
 }

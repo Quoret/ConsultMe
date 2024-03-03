@@ -137,8 +137,8 @@
                                         <asp:DropDownList class="custom-dropdown" ID="TimeFlexibility" runat="server">
                                             <asp:ListItem Text="Select" Value="Select" />
                                             <asp:ListItem Text="Highly flexible" Value="Excellent" />
-                                            <asp:ListItem Text="Flexible schedule" Value="High" />
-                                            <asp:ListItem Text="Moderate flexibility" Value="Average" />
+                                            <asp:ListItem Text="Flexible schedule" Value="Very Good" />
+                                            <asp:ListItem Text="Moderate flexibility" Value="Good" />
                                             <asp:ListItem Text="Limited flexibility" Value="Fair " />
                                             <asp:ListItem Text="Very rigid schedule" Value="Poor " />
                                         </asp:DropDownList>
@@ -165,7 +165,7 @@
                                             <asp:ListItem Text="Select" Value="Select" />
                                             <asp:ListItem Text="Very High" Value="Excellent" />
                                             <asp:ListItem Text="High" Value="Very Good" />
-                                            <asp:ListItem Text="Moderate" Value="Average" />
+                                            <asp:ListItem Text="Moderate" Value="Good" />
                                             <asp:ListItem Text="low" Value="Fair" />
                                             <asp:ListItem Text="Very low" Value="Poor" />
                                         </asp:DropDownList>
@@ -220,7 +220,7 @@
                                         <asp:ListItem Text="Select" Value="Select" />
                                         <asp:ListItem Text="Very High" Value="Excellent" />
                                         <asp:ListItem Text="High" Value="Very Good" />
-                                        <asp:ListItem Text="Moderate" Value="Average" />
+                                        <asp:ListItem Text="Moderate" Value="Good" />
                                         <asp:ListItem Text="low" Value="Fair" />
                                         <asp:ListItem Text="Very low" Value="Poor" />
                                     </asp:DropDownList>
@@ -228,7 +228,7 @@
                             </div>
                             
 </div>          
-                            <
+                            
                             <br />
 
                             <br />

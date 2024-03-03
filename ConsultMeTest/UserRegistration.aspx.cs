@@ -4,6 +4,8 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
@@ -62,11 +64,12 @@ namespace ConsultMeTest
                 {
                     con.Open();
                 }
+                string hashedpassword = HashPassword(U_conPassword.Text.Trim());
                 SqlCommand cmd = new SqlCommand("INSERT INTO Client(ClientFullname,ClientEmail,ClientUsername,ClientPassword) values(@ClientFullname,@ClientEmail,@ClientUsername,@ClientPassword) ", con);
                 cmd.Parameters.AddWithValue("@ClientFullname", U_Fullname.Text.Trim());
                 cmd.Parameters.AddWithValue("@ClientEmail", U_Email.Text.Trim());
                 cmd.Parameters.AddWithValue("@ClientUsername", U_Username.Text.Trim());
-                cmd.Parameters.AddWithValue("@ClientPassword", U_conPassword.Text.Trim());
+                cmd.Parameters.AddWithValue("@ClientPassword",hashedpassword);
                 cmd.ExecuteNonQuery();
                 con.Close();
                 Response.Write("<script>alert('Sign up successful. Login now !!');</script>");
@@ -127,6 +130,14 @@ namespace ConsultMeTest
             string pattern = @"^(?=.*[!@#$%^&*()])(?=.*[A-Z])(?=.*\d).{8,}$";
 
             return Regex.IsMatch(password, pattern);
+        }
+        string HashPassword(string password)
+        {
+            using (var sha256 = SHA256.Create())
+            {
+                var hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
+            }
         }
     }
 }

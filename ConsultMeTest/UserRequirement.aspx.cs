@@ -62,10 +62,10 @@ namespace ConsultMeTest
                 {
                     
                     string filterByCatagoryQuery = "SELECT LawyerAdditionalInfo.AreaOfExperties FROM LawyerAdditionalInfo INNER JOIN Similarityindex ON LawyerAdditionalInfo.LawyerID=Similarityindex.LawyerID WHERE LawyerAdditionalInfo.AreaOfExperties='" + lawyer_catagory + "'";
-                    string delete_table = "DELETE FROM SimilarityIndex";
-                    string extract_lawyer_id = "Select top 5 FROM similarityindex order by similarity_index desc";
+                    string delete_table = "DELETE FROM Similarityindex";
+                    string extract_lawyer_id = "Select top 5 FROM Similarityindex order by Similarity_index desc";
                     // string extract_lawyer_info = "SELECT * FROM Lawyer JOIN similarityindex ON similarityindex.LawyerID = Lawyer.LawyerID where lawyerID ='"++ "' ";
-                    string insert_result = "INSERT INTO SimilarityIndex (Similarity_index,LawyerID) VALUES(@Similarity_index,@LawyerID)";
+                    string insert_result = "INSERT INTO Similarityindex (Similarity_index,LawyerID) VALUES(@Similarity_index,@LawyerID)";
                     string NumberQuery = "SELECT COUNT(*)  FROM ClientFeedback";
                     string extractQuery = "SELECT LawyerID,AVG(CommunicationAvailability) AS AvgCommunicationAvailability,AVG(CommunicationSkills) AS AvgCommunicationSkills,AVG(Experties) AS AvgExperties, AVG(TimeFlexibility) AS AvgTimeFlexibility, AVG(Morality) AS AvgMorality, AVG(TimeInvestment) AS AvgTimeInvestment, AVG(CaseManagement) AS AvgCaseManagement, AVG(Strategy) AS AvgStrategy, AVG(PriceCharged) AS AvgPriceCharged, AVG(Experience) AS AvgExperience FROM ClientFeedback GROUP BY LawyerID;";
                     using (SqlConnection con = new SqlConnection(strcon))
@@ -120,7 +120,7 @@ namespace ConsultMeTest
                             double mag_aft_norm1 = magnitude(val1, val2, val3, val4, val5, val6, val7, val8, val9, val10);
                             double mag_aft_norm2 = magnitude(value1, value2, value3, value4, value5, value6, value7, value8, value9, value10);
                             double uppervalue = (val1 * value1) + (val2 * value2) + (val3 * value3) + (val4 * value4) + (val5 * value5) + (val6 * value6) + (val7 * value7) + (val8 * value8) + (val9 * value9) + (val10 * value10);
-                            double similarity_score = (uppervalue / (mag_aft_norm1 * mag_aft_norm2));
+                            double similarity_score = ((uppervalue / (mag_aft_norm1 * mag_aft_norm2)));
                             cmd3.Parameters.AddWithValue("@Similarity_index", similarity_score);
                             cmd3.Parameters.AddWithValue("@LawyerId", LawyerID2);
                             cmd3.ExecuteNonQuery();
@@ -138,7 +138,16 @@ namespace ConsultMeTest
                         {
                             double answer;
                             answer = Math.Sqrt((val1 * val1) + (val2 * val2) + (val3 * val3) + (val4 * val4) + (val5 * val5) + (val6 * val6) + (val7 * val7) + (val8 * val8) + (val9 * val9) + (val10 * val10));
-                            return answer;
+                            if (answer == 0)
+                            {
+                                answer = answer + 0.00000001;
+                                return answer;
+                            }
+                            else
+                            {
+                                return answer;
+
+                            }
                         }
                         double mean(double val1, double val2, double val3, double val4, double val5, double val6, double val7, double val8, double val9, double val10)
                         {

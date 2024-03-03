@@ -66,7 +66,7 @@
                     btnText.innerHTML = "Read less";
                     moreText.style.display = "inline";
                 }
-            }  
+            }
         </script>
 
     </asp:ContentPlaceHolder>
@@ -105,6 +105,10 @@
 
                         <ul class="navbar-nav">
 
+                            <li class="nav-item active">
+                                <asp:LinkButton CssClass="nav-link btn btn-outline-dark p-1 text-dark font-weight-bold" ID="Adminlogin" runat="server" OnClick="Adminlogin_Click">Admin Login</asp:LinkButton>
+
+                            </li>
 
                             <li class="nav-item active">
                                 <asp:LinkButton CssClass="nav-link btn btn-outline-dark p-1 text-dark font-weight-bold" ID="client_Login" runat="server" OnClick="client_Login_Click">Client Login</asp:LinkButton>
@@ -119,6 +123,11 @@
                             <li class="nav-item active">
 
                                 <asp:LinkButton CssClass="nav-link btn btn-outline-dark p-1 text-dark font-weight-bold" ID="UpdateProfile" runat="server" Visible="False" OnClick="UpdateProfile_Click">Profile</asp:LinkButton>
+
+                            </li>
+                            <li class="nav-item active">
+
+                                <asp:LinkButton CssClass="nav-link btn btn-outline-dark p-1 text-dark font-weight-bold" ID="AdminWork" runat="server" Visible="False" OnClick="AdminWork_Click">Verification</asp:LinkButton>
 
                             </li>
 
@@ -150,6 +159,7 @@
 
         <!-- footer section start -->
         <footer>
+
             <div class="footer_section layout_padding">
                 <div class="container">
                     <div class="row">

@@ -85,7 +85,10 @@
                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString='<%$ ConnectionStrings:ConsultMeDBConnectionString %>' ProviderName='<%$ ConnectionStrings:ConsultMeDBConnectionString.ProviderName %>' SelectCommand="SELECT [LawyerID], [LawyerFullname], [AreaOfExperties], [Contact], [District], [CaseCount], [AvailableDate] FROM [SearchLawyerGridView]"></asp:SqlDataSource>
                     <center>
                         <h1 class="larger-text">Select your Present Lawyer </h1>
-                        <span>(Here you can find new but similar lawyer you previously consulted to)</span>
+                        <span>(Here you can find new but similar lawyer you previously consulted to)</span><br />
+                            <span>Step 1 : Search your Previous lawyer</span><br />
+                            <span>Step 2 : Hover over the lawyer name to find similar lawyer</span>
+                        
                         <hr />
                         <%--<asp:GridView class="table table-striped table-bordered" ID="Search_lawyer" runat="server" OnRowDataBound="Search_lawyer_RowDataBound" DataKeyNames="LawyerID">
                             <Columns>

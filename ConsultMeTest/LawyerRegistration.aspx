@@ -33,6 +33,10 @@
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="L_Email" runat="server" placeholder="Email" BorderStyle="Solid" BorderColor="Black" BackColor="White" TextMode="Email"></asp:TextBox>
                                 </div>
+                                <label>License Number</label>
+                                <div class="form-group">
+                                    <asp:TextBox CssClass="form-control" ID="LicenseNumber" runat="server" placeholder="License Number" BorderStyle="Solid" BorderColor="Black" BackColor="White" TextMode="Phone"></asp:TextBox>
+                                </div>
                                 <label>Username</label>
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="L_Username" runat="server" placeholder="Username" BackColor="White" BorderColor="Black" BorderStyle="Solid"></asp:TextBox>

@@ -19,7 +19,7 @@ namespace ConsultMeTest
         
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void Submit_profile_Click(object sender, EventArgs e)
@@ -144,39 +144,7 @@ namespace ConsultMeTest
         }
         bool checkIfLawyerIdExists()
         {
-            //try
-            //{
-            //    using (SqlConnection con = new SqlConnection(strcon))
-            //    {
-            //        con.Open();
-            //        if (!string.IsNullOrEmpty(Session["LawyerId"] as string) && int.TryParse(Session["LawyerId"].ToString(), out int lawyerId))
-            //        {
-            //            string check_query = "SELECT * FROM LawyerAdditionalInfo WHERE LawyerID= "+lawyerId+"";
-            //            SqlCommand cmd = new SqlCommand(check_query, con);
-            //            // cmd.Parameters.AddWithValue("@LawyerID", lawyerId);
-            //            SqlDataAdapter da = new SqlDataAdapter(cmd);                           
-            //            DataTable dt = new DataTable();
-            //            da.Fill(dt);
-            //            if(dt.Rows.Count > 0)
-            //            {
-            //                return true;
-            //            }
-            //            else
-            //            {
-            //                return false;
-            //            }             
-            //        }
-            //        else
-            //        {
-            //            return false;
-            //        }
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    Response.Write("<script>alert('" + ex.Message + "');</script>");
-            //    return false;
-            //}
+
             int lawyerId;
             if (Session["LawyerId"] != null && int.TryParse(Session["LawyerId"].ToString(), out lawyerId))
             {
@@ -193,33 +161,30 @@ namespace ConsultMeTest
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.Parameters.AddWithValue("@LawyerID", lawyerId);
 
-                    int totalCount = (int)cmd.ExecuteScalar(); // ExecuteScalar returns a single value (in this case, the count)
+                    int totalCount = (int)cmd.ExecuteScalar();
                     con.Close();
 
-                    // Now you can use totalCount as needed
+                    
                     if (totalCount > 0)
                     {
-                        // There are records for the specified LawyerID
-                        //Response.Write("<script>alert('There are records for the specified LawyerID');</script>");
+
                         return true;
                     }
                     else
                     {
-                        // There are no records for the specified LawyerID
-                       // Response.Write("<script>alert('There are no records for the specified LawyerID');</script>");
                         return false;
                     }
                 }
                 catch (Exception ex)
                 {
-                    // Handle the exception
+                 
                     Response.Write("<script>alert('" + ex.Message + "');</script>");
                     return false;
                 }
             }
             else
             {
-                // Handle the case where the session does not contain a valid LawyerID
+                
                 Response.Write("<script>alert('Invalid LawyerID in session');</script>");
                 return false;
             }

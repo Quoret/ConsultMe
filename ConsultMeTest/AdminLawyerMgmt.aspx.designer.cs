@@ -11,97 +11,115 @@ namespace ConsultMeTest
 {
 
 
-    public partial class Consult
+    public partial class AdminLawyerMgmt
     {
 
         /// <summary>
-        /// head control.
+        /// Ad_lawyerid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.TextBox Ad_lawyerid;
 
         /// <summary>
-        /// form1 control.
+        /// go control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.LinkButton go;
 
         /// <summary>
-        /// Adminlogin control.
+        /// Ad_fullname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Adminlogin;
+        protected global::System.Web.UI.WebControls.TextBox Ad_fullname;
 
         /// <summary>
-        /// client_Login control.
+        /// Ad_number control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton client_Login;
+        protected global::System.Web.UI.WebControls.TextBox Ad_number;
 
         /// <summary>
-        /// lawyer_login control.
+        /// Ad_email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lawyer_login;
+        protected global::System.Web.UI.WebControls.TextBox Ad_email;
 
         /// <summary>
-        /// Logout control.
+        /// Ad_username control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Logout;
+        protected global::System.Web.UI.WebControls.TextBox Ad_username;
 
         /// <summary>
-        /// UpdateProfile control.
+        /// status control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton UpdateProfile;
+        protected global::System.Web.UI.WebControls.TextBox status;
 
         /// <summary>
-        /// AdminWork control.
+        /// Verified control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton AdminWork;
+        protected global::System.Web.UI.WebControls.LinkButton Verified;
 
         /// <summary>
-        /// Hello control.
+        /// Pending control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Hello;
+        protected global::System.Web.UI.WebControls.LinkButton Pending;
 
         /// <summary>
-        /// ContentPlaceHolder1 control.
+        /// Delete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.LinkButton Delete;
+
+        /// <summary>
+        /// SqlDataSource1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+
+        /// <summary>
+        /// LawyerList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView LawyerList;
     }
 }

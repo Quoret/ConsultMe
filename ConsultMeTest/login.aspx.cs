@@ -5,6 +5,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -22,7 +24,6 @@ namespace ConsultMeTest
         protected void Login_Click(object sender, EventArgs e)
         {
             string query_user;
-           // string query_lawyer;
             try
             {
                 SqlConnection con = new SqlConnection(strcon);
@@ -30,21 +31,23 @@ namespace ConsultMeTest
                 {
                     con.Open();
                 }
-                query_user = "SELECT *FROM Client where ClientUsername='" + Username.Text.Trim() + "' AND ClientPassword='" + Password.Text.Trim() + "'";
-                //query_lawyer = "SELECT *FROM lawyerGeneralinfo where l_username='" + Username.Text.Trim() + "' AND password='" + Password + "'";
-                SqlCommand cmd_U = new SqlCommand(query_user, con); // for user
-               // SqlCommand cmd_L = new SqlCommand(query_lawyer, con);// for lawyer
+                query_user = "SELECT *FROM Client where ClientUsername='" + Username.Text.Trim() + "'";
+                SqlCommand cmd_U = new SqlCommand(query_user, con); 
                 SqlDataReader dr_U = cmd_U.ExecuteReader();
-               // SqlDataReader dr_L = cmd_L.ExecuteReader();
                 if (dr_U.HasRows)
                 {
                     while (dr_U.Read())
                     {
-                        Response.Write("<script>alert('Login Sucessful');</script>");
-                        Session["ClientId"] = dr_U.GetValue(0).ToString();
-                        Session["username"] = dr_U.GetValue(3).ToString();
-                        Session["fullname"]=dr_U.GetValue(1).ToString();
-                        Session["role"] = "client";
+                        string hashedPassword=HashPassword(Password.Text.Trim());
+                        if (hashedPassword==dr_U.GetValue(4).ToString())
+                        {
+                            Response.Write("<script>alert('Login Sucessful');</script>");
+                            Session["ClientId"] = dr_U.GetValue(0).ToString();
+                            Session["username"] = dr_U.GetValue(3).ToString();
+                            Session["fullname"] = dr_U.GetValue(1).ToString();
+                            Session["role"] = "client";
+                        }
+                       
                     }
                     Response.Redirect("Homepage.aspx");
                 }
@@ -58,6 +61,14 @@ namespace ConsultMeTest
             catch (Exception ex)
             {
                 Response.Write("<script>alert('" + ex.Message + "');</script>");
+            }
+        }
+        string HashPassword(string password)
+        {
+            using (var sha256 = SHA256.Create())
+            {
+                var hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
             }
         }
     }

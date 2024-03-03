@@ -146,7 +146,7 @@ namespace ConsultMeTest
                     {
                         con.Open();
                     }
-                    SqlCommand cmd = new SqlCommand("UPDATE ClientFeedback SET CommunicationAvailability=@CommunicationAvailability,CommunicationSkills=@CommunicationSkills,Experties=@Experties,TimeFlexibility=@TimeFlexibility,Morality=@Morality,TimeInvestment=@TimeInvestment,CaseManagement=@CaseManagement,Strategy=@Strategy,PriceCharged=@PriceCharged,Experience=@Experience WHERE LawyerID='" + lawyer_id + "'", con);
+                    SqlCommand cmd = new SqlCommand("UPDATE ClientFeedback SET CommunicationAvailability=@CommunicationAvailability,CommunicationSkills=@CommunicationSkills,Experties=@Experties,TimeFlexibility=@TimeFlexibility,Morality=@Morality,TimeInvestment=@TimeInvestment,CaseManagement=@CaseManagement,Strategy=@Strategy,PriceCharged=@PriceCharged,Experience=@Experience WHERE LawyerID='" + lawyer_id + "' AND ClientID='"+client_id+"'", con);
                     cmd.Parameters.AddWithValue("@CommunicationAvailability", communicationAvailabilityRating);
                     cmd.Parameters.AddWithValue("@CommunicationSkills", communicationSkillRating);
                     cmd.Parameters.AddWithValue("@Experties", expertiesRating);

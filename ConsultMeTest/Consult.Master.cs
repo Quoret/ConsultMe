@@ -28,6 +28,8 @@ namespace ConsultMeTest
                 //}
                 if (Session["role"] != null && Session["role"].ToString()=="client")
                 {
+                    AdminWork.Visible = false;
+                    Adminlogin.Visible=false; 
                     client_Login.Visible = false;
                     lawyer_login.Visible = false;
                     Logout.Visible = true;
@@ -37,6 +39,8 @@ namespace ConsultMeTest
                 }
                 else if (Session["role"] != null && Session["role"].ToString() == "lawyer")
                 {
+                    AdminWork.Visible = false;
+                    Adminlogin.Visible = false;
                     client_Login.Visible = false;
                     lawyer_login.Visible = false;
                     Logout.Visible = true;
@@ -45,8 +49,21 @@ namespace ConsultMeTest
                     Hello.Text = "Hello " + Session["username"].ToString();
 
                 }
+                else if(Session["role"] != null && Session["role"].ToString() == "Admin")
+                {
+                    AdminWork.Visible = true;
+                    Adminlogin.Visible = false;
+                    client_Login.Visible = false;
+                    lawyer_login.Visible = false;
+                    Logout.Visible = true;
+                    UpdateProfile.Visible = false;
+                    Hello.Visible = true;
+                    Hello.Text = "Hello " + Session["username"].ToString();
+                }
                 else
                 {
+                    AdminWork.Visible = false;
+                    Adminlogin.Visible = true;
                     client_Login.Visible = true;
                     lawyer_login.Visible = true;
                     Logout.Visible = false;
@@ -67,6 +84,7 @@ namespace ConsultMeTest
             Session["username"] = "";
             Session["fullname"] = "";
             Session["role"] = "";
+            Adminlogin.Visible = true;
             client_Login.Visible = true;
             lawyer_login.Visible = true;
             Logout.Visible = false;
@@ -90,6 +108,18 @@ namespace ConsultMeTest
         protected void UpdateProfile_Click(object sender, EventArgs e)
         {
             Response.Redirect("LawyerProfile.aspx");
+        }
+
+        protected void Adminlogin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AdminLogin.aspx");
+
+        }
+
+        protected void AdminWork_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AdminLawyerMgmt.aspx");
+
         }
     }
 }
