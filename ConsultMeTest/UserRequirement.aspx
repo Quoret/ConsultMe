@@ -130,11 +130,11 @@
                                 <div class="form-group">
                                     <asp:DropDownList class="custom-dropdown" ID="CommunicationBetween" runat="server">
                                         <asp:ListItem Text="Select" Value="Select" />
-                                        <asp:ListItem Text="Excellent" Value="Excellent" />
-                                        <asp:ListItem Text="Very Good" Value="Very Good" />
-                                        <asp:ListItem Text="Good" Value="Good" />
-                                        <asp:ListItem Text="Fair" Value="Fair" />
-                                        <asp:ListItem Text="Poor" Value="Poor" />
+                                        <asp:ListItem Text="Continuous " Value="Excellent" />
+                                        <asp:ListItem Text="Frequent " Value="Very Good" />
+                                        <asp:ListItem Text="Regular " Value="Good" />
+                                        <asp:ListItem Text="Occasional " Value="Fair" />
+                                        <asp:ListItem Text="Minimal " Value="Poor" />
                                     </asp:DropDownList>
                                 </div>
                             </div>
@@ -149,11 +149,11 @@
                                     <div class="form-group">
                                         <asp:DropDownList class="custom-dropdown" ID="CaseDifficulty" runat="server">
                                             <asp:ListItem Text="Select" Value="Select" />
-                                            <asp:ListItem Text="Excellent" Value="Excellent" />
-                                            <asp:ListItem Text="Very Good" Value="Very Good" />
-                                            <asp:ListItem Text="Good" Value="Good" />
-                                            <asp:ListItem Text="Fair" Value="Fair" />
-                                            <asp:ListItem Text="Poor" Value="Poor" />
+                                            <asp:ListItem Text="Exceptionally Complex" Value="Excellent" />
+                                            <asp:ListItem Text="Highly Complex" Value="Very Good" />
+                                            <asp:ListItem Text="Complex" Value="Good" />
+                                            <asp:ListItem Text="Moderately Complex" Value="Fair" />
+                                            <asp:ListItem Text="Straightforward" Value="Poor" />
                                         </asp:DropDownList>
                                     </div>
                                 </div>
@@ -162,11 +162,11 @@
                                     <div class="form-group">
                                         <asp:DropDownList class="custom-dropdown" ID="TimeFLexibility" runat="server">
                                             <asp:ListItem Text="Select" Value="Select" />
-                                            <asp:ListItem Text="Excellent" Value="Excellent" />
-                                            <asp:ListItem Text="Very Good" Value="Very Good" />
-                                            <asp:ListItem Text="Good" Value="Good" />
-                                            <asp:ListItem Text="Fair" Value="Fair" />
-                                            <asp:ListItem Text="Poor" Value="Poor" />
+                                            <asp:ListItem Text="Highly Flexible" Value="Excellent" />
+                                            <asp:ListItem Text="Moderately Flexible" Value="Very Good" />
+                                            <asp:ListItem Text="Limited Flexibility" Value="Good" />
+                                            <asp:ListItem Text="Restricted Flexibility" Value="Fair" />
+                                            <asp:ListItem Text="By appointment only" Value="Poor" />
                                         </asp:DropDownList>
                                     </div>
                                 </div>
@@ -179,11 +179,11 @@
                                     <div class="form-group">
                                         <asp:DropDownList class="custom-dropdown" ID="TypeOfHelp" runat="server">
                                             <asp:ListItem Text="Select" Value="Select" />
-                                            <asp:ListItem Text="Excellent" Value="Excellent" />
-                                            <asp:ListItem Text="Very Good" Value="Very Good" />
-                                            <asp:ListItem Text="Good" Value="Good" />
-                                            <asp:ListItem Text="Fair" Value="Fair" />
-                                            <asp:ListItem Text="Poor" Value="Poor" />
+                                            <asp:ListItem Text="Specialized legal service" Value="Excellent" />
+                                            <asp:ListItem Text="Legal Research and Analysis" Value="Very Good" />
+                                            <asp:ListItem Text="Case Representation" Value="Good" />
+                                            <asp:ListItem Text="Document Reviewing and Drafting" Value="Fair" />
+                                            <asp:ListItem Text="General Consultation" Value="Poor" />
                                         </asp:DropDownList>
                                     </div>
                                 </div>
@@ -192,11 +192,11 @@
                                     <div class="form-group">
                                         <asp:DropDownList class="custom-dropdown" ID="TimeDuration" runat="server">
                                             <asp:ListItem Text="Select" Value="Select" />
-                                            <asp:ListItem Text="Excellent" Value="Excellent" />
-                                            <asp:ListItem Text="Very Good" Value="Very Good" />
-                                            <asp:ListItem Text="Good" Value="Good" />
-                                            <asp:ListItem Text="Fair" Value="Fair" />
-                                            <asp:ListItem Text="Poor" Value="Poor" />
+                                            <asp:ListItem Text="Advisory Retainer" Value="Excellent" />
+                                            <asp:ListItem Text="Long-term Engagement" Value="Very Good" />
+                                            <asp:ListItem Text="Medium-term Representation" Value="Good" />
+                                            <asp:ListItem Text="Short-term Assistance" Value="Fair" />
+                                            <asp:ListItem Text="Once time Consultation" Value="Poor" />
                                         </asp:DropDownList>
                                     </div>
                                 </div>
@@ -210,11 +210,11 @@
                                     <div class="form-group">
                                         <asp:DropDownList class="custom-dropdown" ID="CaseSensitivity" runat="server">
                                             <asp:ListItem Text="Select" Value="Select" />
-                                            <asp:ListItem Text="Excellent" Value="Excellent" />
-                                            <asp:ListItem Text="Very Good" Value="Very Good" />
-                                            <asp:ListItem Text="Good" Value="Good" />
-                                            <asp:ListItem Text="Fair" Value="Fair" />
-                                            <asp:ListItem Text="Poor" Value="Poor" />
+                                            <asp:ListItem Text="Extreamly Sensitive" Value="Excellent" />
+                                            <asp:ListItem Text="Moderately Sensitive" Value="Very Good" />
+                                            <asp:ListItem Text="Averagely Sensitive" Value="Good" />
+                                            <asp:ListItem Text="Not much Sensitive" Value="Fair" />
+                                            <asp:ListItem Text="I will not say sensitive" Value="Poor" />
                                         </asp:DropDownList>
                                     </div>
                                 </div>
@@ -223,11 +223,11 @@
                                 <div class="form-group">
                                     <asp:DropDownList class="custom-dropdown" ID="LawyerCreativity" runat="server">
                                         <asp:ListItem Text="Select" Value="Select" />
-                                        <asp:ListItem Text="Excellent" Value="Excellent" />
-                                        <asp:ListItem Text="Very Good" Value="Very Good" />
-                                        <asp:ListItem Text="Good" Value="Good" />
-                                        <asp:ListItem Text="Fair" Value="Fair" />
-                                        <asp:ListItem Text="Poor" Value="Poor" />
+                                        <asp:ListItem Text="Extreamly Strategic" Value="Excellent" />
+                                        <asp:ListItem Text="Moderately Strategic" Value="Very Good" />
+                                        <asp:ListItem Text="Averagely Strategic" Value="Good" />
+                                        <asp:ListItem Text="Not much Strategic" Value="Fair" />
+                                        <asp:ListItem Text="Not at all Strategic" Value="Poor" />
                                     </asp:DropDownList>
                                 </div>
                             </div>
@@ -236,15 +236,15 @@
 <!------------------------------------------------------------------------------------------------------------------------------------->
                         <div class="row mx-auto">
                             <div class="col-md-6">
-                                <label style="font-weight: bold"> What range of cost do you expect?</label>
+                                <label style="font-weight: bold"> What range of cost do you expect?(Better lawyer may cost more)</label>
                                 <div class="form-group">
                                     <asp:DropDownList class="custom-dropdown" ID="CostRange" runat="server">
                                         <asp:ListItem Text="Select" Value="Select" />
-                                        <asp:ListItem Text="Excellent" Value="Excellent" />
-                                        <asp:ListItem Text="Very Good" Value="Very Good" />
-                                        <asp:ListItem Text="Good" Value="Good" />
-                                        <asp:ListItem Text="Fair" Value="Fair" />
-                                        <asp:ListItem Text="Poor" Value="Poor" />
+                                        <asp:ListItem Text="Very high" Value="Excellent" />
+                                        <asp:ListItem Text="Hgh" Value="Very Good" />
+                                        <asp:ListItem Text="Average" Value="Good" />
+                                        <asp:ListItem Text="Below average" Value="Fair" />
+                                        <asp:ListItem Text="Minimal" Value="Poor" />
                                     </asp:DropDownList>
                                 </div>
                             </div>
